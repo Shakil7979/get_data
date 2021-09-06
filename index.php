@@ -30,10 +30,16 @@
 <script>
     
 
-// $.get( "response.php", function( data ) { 
-//     var json_data = JSON.parse(data);
-//   alert( json_data.name );
-// });
+$.get( "response.php", function( data ) { 
+    var json_data = JSON.parse(data);
+  alert( json_data.name );
+});
+
+
+$.post("demo_ajax_gethint.asp", {suggest: txt}, function(result){
+    $("span").html(result);
+  });
+
 
  
 

@@ -1,11 +1,13 @@
 <?php 
 
     $data = array(
-        'name'   => 'Sadbin Shakil',
+        'user'   => 'Sadbin',
+        'password'   => 1234,
         'address'    => 'Dhaka',
         'designation'   => 'WordPress Developer',
         'id'       => 01,
-        'HomeTown'    => 'Dinajpur'
+        'HomeTown'    => 'Dinajpur',
+        'status'   => '200'
     );
     
      echo $json_data = json_encode($data);
