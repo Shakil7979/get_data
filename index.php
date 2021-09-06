@@ -1,10 +1,43 @@
 <?php
+ 
+
+//  get data for array
+ $data = file_get_contents('http://localhost/get_data/response.php'); 
+ $json_decode_data = json_decode($data,1); 
+ echo $json_decode_data['address'];
+
+ 
+
+// get data for object
+ $data = file_get_contents('http://localhost/get_data/response.php'); 
+ $json_decode_data = json_decode($data); 
+ echo $json_decode_data->id;
 
 
+
+
+    // if(isset($_REQUEST['Click_btn'])){
+    //     $data = $_REQUEST[$ajax_data];
+    //     echo $data;
+    // }
 
 
 
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+    
+
+// $.get( "response.php", function( data ) { 
+//     var json_data = JSON.parse(data);
+//   alert( json_data.name );
+// });
+
+ 
+
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +51,11 @@
 <button id="Click_btn"> Store Data</button>
 
 <ul>
-    <li id="title_id"> </li>
+    <li id="title_id"><?php  echo $json_decode_data->id;?> </li>
     <li id="content_id"></li>
 </ul>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 <script>
 
@@ -61,12 +94,12 @@
 
     }
 
-    $('#Click_btn').click(function(){
-        get_data();
+//     $('#Click_btn').click(function(){
+//         get_data();
  
 // $(document.body).append('hello');
  
-    });
+//     });
 
 
 </script>
