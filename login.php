@@ -82,7 +82,9 @@ $('#login_form').on('submit',function(event){
 
                 if(status == 200){
                     alert('Login Successs');
-                    window.location.replace("https://www.google.com/");
+                    
+                    
+                    .location.replace("https://www.google.com/");
                 }  else{
                     alert('Login not found!');
                 }
